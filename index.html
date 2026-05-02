@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Braj Gopika Seva Mission | Spiritual Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #080614;
+      --bg2:     #100D20;
+      --bg3:     #160E2D;
+      --saffron: #F59E0B;
+      --gold:    #C8890A;
+      --gold-lt: #FBBF24;
+      --lotus:   #E879A0;
+      --cream:   #FEF3C7;
+      --text:    #C4AD8A;
+      --muted:   #7A6A52;
+      --border:  rgba(200,137,10,0.25);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'EB Garamond', Georgia, serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    .hindi { font-family: 'Noto Serif Devanagari', serif; font-weight: 700; }
+    h1,h2,h3,h4 { font-family: 'Cinzel Decorative', serif; color: var(--cream); line-height: 1.35; }
+    a { text-decoration: none; }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+    .text-center { text-align: center; }
+
+    .section-label {
+      display: inline-block;
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      color: var(--saffron);
+      font-size: 1.05rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.3rem);
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+
+    .section-desc {
+      font-size: 1.15rem;
+      color: var(--text);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.85;
+    }
+
+    .ornament {
+      display: flex; align-items: center; justify-content: center;
+      gap: 1rem; margin: 0.8rem auto 1.5rem; color: var(--saffron);
+      opacity: 0.65; font-size: 1.1rem;
+    }
+    .ornament::before, .ornament::after {
+      content: ''; flex: 1; max-width: 80px; height: 1px;
+    }
+    .ornament::before { background: linear-gradient(90deg, transparent, var(--saffron)); }
+    .ornament::after  { background: linear-gradient(90deg, var(--saffron), transparent); }
+
+    /* ── SHIMMER ── */
+    .shimmer {
+      background: linear-gradient(90deg, var(--cream) 0%, var(--saffron) 40%, var(--gold-lt) 50%, var(--saffron) 60%, var(--cream) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 5s linear infinite;
+    }
+    @keyframes shimmer { to { background-position: 200% center; } }
+
+    /* ── REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      position: relative; min-height: 100vh;
+      display: flex; align-items: center;
+      overflow: hidden; background: var(--bg);
+    }
+
+    #mandala-canvas {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.22; pointer-events: none;
+      width: min(680px, 90vw); height: min(680px, 90vw);
+    }
+
+    #petal-canvas {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; pointer-events: none;
+    }
+
+    .hero::before {
+      content: ''; position: absolute;
+      top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 650px; height: 650px;
+      background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-arch {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 280px; height: 140px;
+      border: 1px solid var(--border); border-bottom: none;
+      border-radius: 140px 140px 0 0; opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; padding: 6rem 2rem;
+      width: 100%;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: rgba(245,158,11,0.09); border: 1px solid var(--border);
+      color: var(--saffron); font-style: italic;
+      font-size: 0.95rem; letter-spacing: 0.1em;
+      padding: 0.45rem 1.3rem; border-radius: 50px; margin-bottom: 2rem;
+    }
+    .dot {
+      width: 7px; height: 7px; background: var(--saffron); border-radius: 50%;
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50%      { transform: scale(1.6); opacity: 0.5; }
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(1.9rem, 5vw, 3.4rem);
+      color: var(--cream); margin-bottom: 0.9rem;
+      text-shadow: 0 0 50px rgba(245,158,11,0.25);
+    }
+
+    .hero-subtitle {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(0.95rem, 2vw, 1.35rem);
+      color: var(--saffron); margin-bottom: 1.5rem; letter-spacing: 0.06em;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem; max-width: 580px; margin: 0 auto 3rem;
+      color: var(--text); font-style: italic; line-height: 1.9;
+    }
+
+    .platform-pills { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+
+    .platform-pill {
+      display: flex; align-items: center; gap: 0.8rem;
+      background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+      padding: 0.65rem 1.3rem; border-radius: 50px; color: var(--cream);
+      transition: all 0.3s ease; backdrop-filter: blur(4px);
+    }
+    .platform-pill:hover {
+      background: rgba(245,158,11,0.1); border-color: var(--saffron);
+      transform: translateY(-3px);
+    }
+    .pill-info { display: flex; flex-direction: column; align-items: flex-start; }
+    .pill-count { font-family: 'Cinzel Decorative', serif; font-size: 0.88rem; color: var(--cream); line-height: 1; }
+    .pill-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.08em; margin-top: 2px; }
+
+    .scroll-indicator {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    }
+    .scroll-indicator span {
+      display: block; width: 1px; height: 55px;
+      background: linear-gradient(to bottom, var(--saffron), transparent);
+      animation: scroll-drop 2.2s ease-in-out infinite;
+    }
+    @keyframes scroll-drop {
+      0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+      50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+      51%  { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+    }
+
+    /* ══════════════════════════════
+       QUESTIONS
+    ══════════════════════════════ */
+    .questions {
+      background: var(--bg2); padding: 5rem 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .questions .container { display: grid; gap: 1.5rem; max-width: 800px; }
+
+    .question-item {
+      text-align: center; padding: 2rem 2.5rem;
+      border: 1px solid var(--border); border-radius: 3px;
+      background: rgba(245,158,11,0.025); position: relative;
+    }
+    .question-item::before {
+      content: '"'; position: absolute; top: -1rem; left: 1.5rem;
+      font-family: 'Cinzel Decorative', serif; font-size: 5rem;
+      color: var(--saffron); opacity: 0.2; line-height: 1; pointer-events: none;
+    }
+    .question-item h3 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(1.05rem, 2vw, 1.45rem); color: var(--cream);
+      margin-bottom: 0.5rem; font-weight: 600;
+    }
+    .question-item p { font-style: italic; color: var(--muted); font-size: 1.05rem; }
+
+    .question-cta { text-align: center; padding: 1rem; }
+    .question-cta p {
+      font-family: 'Cinzel Decorative', serif; font-size: 1.05rem;
+      color: var(--saffron); letter-spacing: 0.06em;
+    }
+
+    /* ══════════════════════════════
+       LINEAGE
+    ══════════════════════════════ */
+    .lineage { padding: 6rem 0; background: var(--bg); }
+
+    .guru-flow {
+      display: flex; justify-content: center; align-items: center;
+      gap: 2rem; flex-wrap: wrap; margin: 2.5rem 0;
+    }
+
+    .guru-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 3px; padding: 2rem 2.5rem; text-align: center;
+      min-width: 210px; position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .guru-card::before, .guru-card::after {
+      content: ''; position: absolute; width: 14px; height: 14px;
+      border-color: var(--saffron); border-style: solid; opacity: 0.6;
+    }
+    .guru-card::before { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+    .guru-card::after  { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+    .guru-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(245,158,11,0.15); }
+
+    .guru-emoji { font-size: 2.5rem; margin-bottom: 0.8rem; }
+    .guru-card h4 { font-size: 0.85rem; color: var(--cream); margin-bottom: 0.4rem; line-height: 1.6; }
+    .guru-card p  { color: var(--muted); font-style: italic; font-size: 0.9rem; }
+    .guru-arrow   { color: var(--saffron); opacity: 0.55; font-size: 1.4rem; }
+
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: 3px; overflow: hidden;
+      max-width: 680px; margin: 0 auto;
+    }
+    .stat-item { background: var(--bg2); padding: 2rem 1rem; text-align: center; }
+    .stat-number { font-family: 'Cinzel Decorative', serif; font-size: 2rem; color: var(--saffron); display: block; }
+    .stat-label  { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-top: 0.3rem; }
+
+    /* ══════════════════════════════
+       CONTENT PILLARS
+    ══════════════════════════════ */
+    .content-pillars {
+      background: var(--bg2); padding: 6rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .tabs-nav {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 0; margin: 2.5rem 0 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab-btn {
+      background: none; border: none;
+      padding: 0.75rem 2rem; font-family: 'Cinzel Decorative', serif;
+      font-size: 0.82rem; color: var(--muted); cursor: pointer;
+      position: relative; transition: color 0.3s; letter-spacing: 0.06em;
+    }
+    .tab-btn::after {
+      content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+      height: 2px; background: var(--saffron);
+      transform: scaleX(0); transition: transform 0.3s ease;
+    }
+    .tab-btn.active { color: var(--saffron); }
+    .tab-btn.active::after { transform: scaleX(1); }
+    .tab-btn:hover { color: var(--cream); }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .pillar-card {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 3rem; align-items: center; padding: 2rem 0;
+    }
+    @media (max-width: 680px) { .pillar-card { grid-template-columns: 1fr; } }
+
+    .pillar-visual {
+      aspect-ratio: 4/3; background: var(--bg3);
+      border: 1px solid var(--border); border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .pillar-visual-icon { font-size: 5rem; opacity: 0.35; z-index: 1; }
+    .pillar-visual::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(245,158,11,0.07), transparent 70%);
+    }
+    .pillar-visual::after {
+      content: ''; position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(200,137,10,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,137,10,0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .pillar-tag {
+      display: inline-block; font-size: 0.78rem; color: var(--saffron);
+      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 0.8rem;
+    }
+    .pillar-info h3 { font-size: 1.55rem; color: var(--cream); margin-bottom: 0.9rem; }
+    .pillar-info p  { font-size: 1.1rem; line-height: 1.9; color: var(--text); margin-bottom: 1.5rem; }
+    .cta-link {
+      color: var(--saffron); font-family: 'Cinzel Decorative', serif;
+      font-size: 0.82rem; display: inline-flex; align-items: center; gap: 0.5rem;
+      letter-spacing: 0.06em; transition: gap 0.3s;
+    }
+    .cta-link:hover { gap: 1rem; }
+
+    /* ══════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════ */
+    .testimonials { padding: 6rem 0; background: var(--bg); }
+
+    .testimonial-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.5rem; margin-top: 2rem;
+    }
+    .testimonial-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 3px; padding: 2rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(245,158,11,0.1); }
+
+    .quote-icon { color: var(--lotus); font-size: 1.7rem; opacity: 0.5; margin-bottom: 1rem; display: block; }
+
+    blockquote {
+      font-size: 1.05rem; font-style: italic; color: var(--text);
+      line-height: 1.85; margin-bottom: 1.5rem; quotes: none; border: none;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+    .testimonial-avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--saffron), var(--lotus));
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel Decorative', serif; font-size: 0.95rem;
+      color: var(--bg); font-weight: bold; flex-shrink: 0;
+    }
+    .testimonial-name { font-family: 'Cinzel Decorative', serif; font-size: 0.82rem; color: var(--cream); }
+    .testimonial-role { font-size: 0.84rem; color: var(--muted); font-style: italic; }
+
+    /* ══════════════════════════════
+       PLATFORM HUB
+    ══════════════════════════════ */
+    .platform-hub {
+      background: var(--bg2); padding: 6rem 0;
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    }
+    .platform-cards {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem; margin-top: 2rem;
+    }
+    .platform-card {
+      background: var(--bg); border: 1px solid var(--border);
+      border-radius: 3px; padding: 2.5rem 2rem; text-align: center;
+      position: relative; overflow: hidden; transition: transform 0.3s;
+    }
+    .platform-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .platform-card.fb::before { background: #1877F2; }
+    .platform-card.yt::before { background: #FF0000; }
+    .platform-card.ig::before { background: linear-gradient(90deg,#833AB4,#E1306C,#FD8D14); }
+    .platform-card:hover { transform: translateY(-5px); box-shadow: 0 10px 35px rgba(0,0,0,0.3); }
+
+    .platform-icon {
+      width: 58px; height: 58px; margin: 0 auto 1.2rem;
+      background: var(--bg2); border: 1px solid var(--border);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    }
+    .platform-card h3 { font-size: 1.05rem; color: var(--cream); margin-bottom: 0.4rem; }
+    .follower-count { font-family: 'Cinzel Decorative', serif; font-size: 1.75rem; color: var(--saffron); }
+    .follower-label { color: var(--muted); font-size: 0.88rem; font-style: italic; margin-bottom: 1.5rem; }
+
+    .features { list-style: none; margin-bottom: 1.5rem; text-align: left; }
+    .features li {
+      padding: 0.35rem 0; font-size: 0.95rem; color: var(--text);
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .features li::before { content: '✦'; color: var(--saffron); font-size: 0.55rem; }
+
+    .follow-btn {
+      display: inline-block; border: 1px solid var(--saffron);
+      color: var(--saffron); font-family: 'Cinzel Decorative', serif;
+      font-size: 0.78rem; padding: 0.65rem 2rem; border-radius: 2px;
+      letter-spacing: 0.08em; transition: all 0.3s;
+    }
+    .follow-btn:hover { background: var(--saffron); color: var(--bg); }
+
+    /* ══════════════════════════════
+       INVITATION
+    ══════════════════════════════ */
+    .invitation {
+      padding: 7rem 0; background: var(--bg3); text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .invitation::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%); width: 700px; height: 350px;
+      background: radial-gradient(ellipse, rgba(245,158,11,0.08), transparent 70%);
+    }
+    .invitation-content { position: relative; z-index: 1; }
+
+    .lotus-motif {
+      font-size: 3.5rem; display: block; margin-bottom: 1.5rem;
+      animation: float-lotus 3.5s ease-in-out infinite;
+    }
+    @keyframes float-lotus {
+      0%,100% { transform: translateY(0); }
+      50%      { transform: translateY(-10px); }
+    }
+
+    .invitation h2 {
+      font-family: 'Noto Serif Devanagari', serif;
+      font-size: clamp(1.7rem, 4vw, 2.8rem); color: var(--cream);
+      margin-bottom: 0.8rem; text-shadow: 0 0 40px rgba(245,158,11,0.25);
+    }
+    .inv-subtitle {
+      font-family: 'Cinzel Decorative', serif; color: var(--saffron);
+      font-size: 0.95rem; letter-spacing: 0.1em; margin-bottom: 3rem;
+    }
+    .final-ctas { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.2rem; }
+
+    .final-cta {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      background: linear-gradient(135deg, var(--saffron), var(--gold));
+      color: var(--bg); font-family: 'Cinzel Decorative', serif;
+      font-size: 0.82rem; padding: 1rem 2.5rem; border-radius: 2px;
+      letter-spacing: 0.08em; font-weight: 700;
+      position: relative; overflow: hidden; transition: all 0.3s;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+      transition: left 0.5s;
+    }
+    .final-cta:hover::before { left: 100%; }
+    .final-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(245,158,11,0.4); }
+
+    .final-cta.ghost {
+      background: transparent; border: 1px solid var(--saffron); color: var(--saffron);
+    }
+    .final-cta.ghost:hover { background: rgba(245,158,11,0.08); box-shadow: 0 10px 25px rgba(245,158,11,0.15); }
+
+    /* ══════════════════════════════
+       FOOTER
+    ══════════════════════════════ */
+    .site-footer { background: var(--bg); border-top: 1px solid var(--border); padding: 4rem 0 2rem; }
+
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 3rem;
+    }
+    @media (max-width: 680px) { .footer-grid { grid-template-columns: 1fr; gap: 2rem; } }
+
+    .footer-brand h4 { font-size: 0.95rem; color: var(--saffron); margin-bottom: 1rem; letter-spacing: 0.03em; }
+    .footer-brand p  { font-size: 0.9rem; color: var(--muted); line-height: 1.85; }
+    .footer-links h5 { font-family: 'Cinzel Decorative', serif; font-size: 0.78rem; color: var(--cream); margin-bottom: 1rem; letter-spacing: 0.08em; }
+    .footer-links a  { display: block; color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--saffron); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 1.5rem;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.82rem; color: var(--muted); }
+    .footer-socials  { display: flex; gap: 1rem; }
+    .footer-socials a { color: var(--muted); font-size: 1rem; transition: color 0.2s; }
+    .footer-socials a:hover { color: var(--saffron); }
+
+    /* ── Responsive tabs on mobile ── */
+    @media (max-width: 680px) {
+      .tabs-nav { border-bottom: none; gap: 0.4rem; }
+      .tab-btn { border: 1px solid var(--border); border-radius: 2px; font-size: 0.72rem; padding: 0.55rem 0.9rem; }
+      .tab-btn.active { background: rgba(245,158,11,0.1); }
+      .tab-btn::after { display: none; }
+      .guru-flow { flex-direction: column; }
+      .guru-arrow { transform: rotate(90deg); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <canvas id="mandala-canvas"></canvas>
+  <canvas id="petal-canvas"></canvas>
+  <div class="hero-arch"></div>
+
+  <div class="container hero-content">
+    <div class="hero-badge"><div class="dot"></div> Join 1M+ Spiritual Seekers</div>
+    <h1 class="hindi">क्या आप सच्ची शांति की तलाश में हैं?</h1>
+    <p class="hero-subtitle">Are you searching for true, lasting peace?</p>
+    <div class="ornament">🪷</div>
+    <p class="hero-tagline">Discover the timeless wisdom of Bhakti. Bridge the gap between your material life and spiritual growth with Braj Gopika Seva Mission.</p>
+
+    <div class="platform-pills">
+      <a href="#platform-hub" class="platform-pill">
+        <i class="fab fa-facebook" style="color:#1877F2;font-size:1.3rem;"></i>
+        <div class="pill-info"><span class="pill-count">691K+</span><span class="pill-label">Followers</span></div>
+      </a>
+      <a href="#platform-hub" class="platform-pill">
+        <i class="fab fa-youtube" style="color:#FF0000;font-size:1.3rem;"></i>
+        <div class="pill-info"><span class="pill-count">Daily</span><span class="pill-label">Satsang</span></div>
+      </a>
+      <a href="#platform-hub" class="platform-pill">
+        <i class="fab fa-instagram" style="color:#E1306C;font-size:1.3rem;"></i>
+        <div class="pill-info"><span class="pill-count">2,975+</span><span class="pill-label">Community</span></div>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-indicator"><span></span></div>
+</section>
+
+<!-- ══ QUESTIONS ══ -->
+<section class="questions">
+  <div class="container">
+    <div class="question-item reveal">
+      <h3>"हम सब आनंद चाहते हैं, लेकिन वह मिलता क्यों नहीं?"</h3>
+      <p>We all seek happiness, but why does it elude us?</p>
+    </div>
+    <div class="question-item reveal">
+      <h3>"क्या भौतिक सफलता ही जीवन का अंतिम लक्ष्य है?"</h3>
+      <p>Is material success the ultimate goal of life?</p>
+    </div>
+    <div class="question-cta reveal">
+      <p>The answers lie in the ancient wisdom of Braj…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ LINEAGE ══ -->
+<section class="lineage">
+  <div class="container text-center">
+    <span class="section-label">Our Heritage</span>
+    <h2 class="section-title shimmer reveal">A Divine Lineage of Grace</h2>
+    <div class="ornament">✦ ✦ ✦</div>
+    <p class="section-desc reveal">Authentic spiritual knowledge passed down through an unbroken chain of enlightened masters.</p>
+
+    <div class="guru-flow">
+      <div class="guru-card reveal">
+        <div class="guru-emoji">🕉️</div>
+        <h4>Jagadguru Shri Kripalu Ji Maharaj</h4>
+        <p>Supreme Spiritual Master</p>
+      </div>
+      <div class="guru-arrow reveal"><i class="fas fa-arrow-right"></i></div>
+      <div class="guru-card reveal">
+        <div class="guru-emoji">🙏</div>
+        <h4>Pujya Rameshwari Devi Ji</h4>
+        <p>Founder, BGSM</p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item reveal"><span class="stat-number">25+</span><div class="stat-label">Years of Seva</div></div>
+      <div class="stat-item reveal"><span class="stat-number">1M+</span><div class="stat-label">Lives Touched</div></div>
+      <div class="stat-item reveal"><span class="stat-number">50+</span><div class="stat-label">Centers Global</div></div>
+      <div class="stat-item reveal"><span class="stat-number">10K+</span><div class="stat-label">Daily Devotees</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTENT PILLARS ══ -->
+<section class="content-pillars">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Explore</span>
+      <h2 class="section-title reveal">Your Path to Inner Joy</h2>
+    </div>
+
+    <div class="tabs-nav">
+      <button class="tab-btn active" data-tab="satsang">Satsang</button>
+      <button class="tab-btn" data-tab="kirtan">Kirtan</button>
+      <button class="tab-btn" data-tab="seva">Seva</button>
+      <button class="tab-btn" data-tab="wisdom">Wisdom</button>
+    </div>
+
+    <div class="tab-content active" id="satsang">
+      <div class="pillar-card">
+        <div class="pillar-visual"><span class="pillar-visual-icon">🪷</span></div>
+        <div class="pillar-info">
+          <span class="pillar-tag">Spiritual Discourse</span>
+          <h3>Transformative Satsang</h3>
+          <p>Immerse yourself in profound discourses that demystify Vedic philosophy and provide practical solutions for modern life challenges.</p>
+          <a href="#" class="cta-link">Watch Latest Satsang <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="kirtan">
+      <div class="pillar-card">
+        <div class="pillar-visual"><span class="pillar-visual-icon">🎶</span></div>
+        <div class="pillar-info">
+          <span class="pillar-tag">Divine Chants</span>
+          <h3>Soul-Stirring Kirtan</h3>
+          <p>Experience the bliss of congregational chanting. Let the divine names of Radha Krishna cleanse your heart and mind.</p>
+          <a href="#" class="cta-link">Listen Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="seva">
+      <div class="pillar-card">
+        <div class="pillar-visual"><span class="pillar-visual-icon">🤲</span></div>
+        <div class="pillar-info">
+          <span class="pillar-tag">Selfless Service</span>
+          <h3>Humanitarian Seva</h3>
+          <p>Join our massive charitable initiatives in healthcare, education, and social welfare. Serve humanity as service to God.</p>
+          <a href="#" class="cta-link">Get Involved <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="wisdom">
+      <div class="pillar-card">
+        <div class="pillar-visual"><span class="pillar-visual-icon">📿</span></div>
+        <div class="pillar-info">
+          <span class="pillar-tag">Sacred Teachings</span>
+          <h3>Timeless Wisdom</h3>
+          <p>Explore a rich library of spiritual texts, guided meditations, and practical teachings that illuminate the path of Bhakti for the modern seeker.</p>
+          <a href="#" class="cta-link">Explore Library <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials">
+  <div class="container text-center">
+    <span class="section-label">Transformations</span>
+    <h2 class="section-title reveal">Voices of the Bhakti Path</h2>
+    <div class="ornament">🪷</div>
+    <p class="section-desc reveal">See how the teachings of BGSM have brought peace and purpose to thousands.</p>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <blockquote>"I was chasing success, but felt incredibly empty. BGSM's teachings gave me the true purpose of life. Now, every day is filled with divine joy."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div><div class="testimonial-name">Anjali Sharma</div><div class="testimonial-role">Corporate Executive</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <blockquote>"सत्संग ने मेरे जीवन की दिशा बदल दी। अब मैं हर परिस्थिति में शांत और सकारात्मक रहता हूँ।"</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">R</div>
+          <div><div class="testimonial-name">Rahul Verma</div><div class="testimonial-role">Entrepreneur</div></div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <i class="fas fa-quote-left quote-icon"></i>
+        <blockquote>"The daily kirtans and practical wisdom are my anchor. I found a spiritual family that supports my growth unconditionally."</blockquote>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">P</div>
+          <div><div class="testimonial-name">Priya Patel</div><div class="testimonial-role">Student</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PLATFORM HUB ══ -->
+<section class="platform-hub" id="platform-hub">
+  <div class="container text-center">
+    <span class="section-label">Stay Connected</span>
+    <h2 class="section-title reveal">Join Our Digital Spiritual Family</h2>
+    <div class="ornament">✦ ✦ ✦</div>
+    <p class="section-desc reveal">Receive daily inspiration, live satsang updates, and divine wisdom right in your feed.</p>
+
+    <div class="platform-cards">
+      <div class="platform-card fb reveal">
+        <div class="platform-icon"><i class="fab fa-facebook-f" style="color:#1877F2;font-size:1.7rem;"></i></div>
+        <h3>Facebook</h3>
+        <div class="follower-count">691K+</div>
+        <div class="follower-label">Active Followers</div>
+        <ul class="features">
+          <li>Daily Inspirational Quotes</li>
+          <li>Live Event Streams</li>
+          <li>Community Discussions</li>
+        </ul>
+        <a href="#" class="follow-btn">Follow Page</a>
+      </div>
+
+      <div class="platform-card yt reveal">
+        <div class="platform-icon"><i class="fab fa-youtube" style="color:#FF0000;font-size:1.7rem;"></i></div>
+        <h3>YouTube</h3>
+        <div class="follower-count">Live</div>
+        <div class="follower-label">Daily Broadcasts</div>
+        <ul class="features">
+          <li>Full Satsang Videos</li>
+          <li>Soulful Kirtans</li>
+          <li>Short Wisdom Clips</li>
+        </ul>
+        <a href="#" class="follow-btn">Subscribe</a>
+      </div>
+
+      <div class="platform-card ig reveal">
+        <div class="platform-icon"><i class="fab fa-instagram" style="color:#E1306C;font-size:1.7rem;"></i></div>
+        <h3>Instagram</h3>
+        <div class="follower-count">2,975+</div>
+        <div class="follower-label">Community</div>
+        <ul class="features">
+          <li>Reels &amp; Shorts</li>
+          <li>Behind the Scenes</li>
+          <li>Youth Connect</li>
+        </ul>
+        <a href="#" class="follow-btn">Follow Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INVITATION ══ -->
+<section class="invitation">
+  <div class="invitation-content container">
+    <span class="lotus-motif">🪷</span>
+    <h2 class="hindi">आपका आध्यात्मिक सफर यहाँ से शुरू होता है</h2>
+    <p class="inv-subtitle">Your spiritual journey begins here.</p>
+    <div class="final-ctas">
+      <a href="#" class="final-cta"><i class="fas fa-envelope"></i> Subscribe to Newsletter</a>
+      <a href="#" class="final-cta ghost"><i class="fab fa-whatsapp"></i> Join WhatsApp Group</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Braj Gopika Seva Mission</h4>
+        <p>Dedicated to spreading the divine message of Jagadguru Shri Kripalu Ji Maharaj and facilitating the spiritual upliftment of souls through Seva and Sankirtan.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <a href="#">About Us</a><a href="#">Our Lineage</a>
+        <a href="#">Ashrams</a><a href="#">Events</a><a href="#">Donate</a>
+      </div>
+      <div class="footer-links">
+        <h5>Resources</h5>
+        <a href="#">Articles</a><a href="#">Videos</a>
+        <a href="#">Audio Library</a><a href="#">Books</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Braj Gopika Seva Mission. All Rights Reserved.</p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── TABS ──
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
+
+// ── SCROLL REVEAL ──
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// ── MANDALA ──
+(function() {
+  const canvas = document.getElementById('mandala-canvas');
+  const ctx    = canvas.getContext('2d');
+  const SIZE   = 680;
+  canvas.width = canvas.height = SIZE;
+  const cx = SIZE / 2, cy = SIZE / 2;
+  const gold = '#C8890A', saffron = '#F59E0B', cream = '#FEF3C7';
+
+  function drawMandala(t) {
+    ctx.clearRect(0, 0, SIZE, SIZE);
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(t * 0.0003);
+
+    // Outer rings
+    [320, 300, 280, 250].forEach((r, i) => {
+      ctx.beginPath();
+      ctx.arc(0, 0, r, 0, Math.PI * 2);
+      ctx.strokeStyle = i === 0 ? gold : saffron;
+      ctx.lineWidth = i === 0 ? 1 : 0.5;
+      ctx.globalAlpha = 0.3 - i * 0.05;
+      ctx.stroke();
+    });
+    ctx.globalAlpha = 1;
+
+    // 16 outer petals
+    for (let i = 0; i < 16; i++) {
+      ctx.save();
+      ctx.rotate((i / 16) * Math.PI * 2);
+      ctx.beginPath();
+      ctx.ellipse(0, -230, 14, 50, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = saffron;
+      ctx.lineWidth = 0.8;
+      ctx.globalAlpha = 0.35;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // 8 inner petals
+    ctx.rotate(t * 0.0002);
+    for (let i = 0; i < 8; i++) {
+      ctx.save();
+      ctx.rotate((i / 8) * Math.PI * 2);
+      ctx.beginPath();
+      ctx.ellipse(0, -150, 20, 60, 0, 0, Math.PI * 2);
+      ctx.strokeStyle = gold;
+      ctx.lineWidth = 1;
+      ctx.globalAlpha = 0.4;
+      ctx.stroke();
+      ctx.restore();
+    }
+
+    // Star polygon (8-pointed)
+    ctx.rotate(-t * 0.0001);
+    ctx.beginPath();
+    for (let i = 0; i < 8; i++) {
+      const angle = (i / 8) * Math.PI * 2 - Math.PI / 2;
+      const r = i % 2 === 0 ? 200 : 90;
+      i === 0 ? ctx.moveTo(Math.cos(angle)*r, Math.sin(angle)*r)
+              : ctx.lineTo(Math.cos(angle)*r, Math.sin(angle)*r);
+    }
+    ctx.closePath();
+    ctx.strokeStyle = cream;
+    ctx.lineWidth = 0.8;
+    ctx.globalAlpha = 0.25;
+    ctx.stroke();
+
+    // Middle rings
+    [120, 80, 45].forEach(r => {
+      ctx.beginPath(); ctx.arc(0, 0, r, 0, Math.PI*2);
+      ctx.strokeStyle = saffron; ctx.lineWidth = 0.8;
+      ctx.globalAlpha = 0.4; ctx.stroke();
+    });
+
+    // Center dot
+    ctx.beginPath(); ctx.arc(0, 0, 10, 0, Math.PI*2);
+    ctx.fillStyle = gold; ctx.globalAlpha = 0.6; ctx.fill();
+
+    ctx.restore();
+  }
+
+  let lastT = 0;
+  function loop(t) {
+    drawMandala(t);
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+
+// ── FLOATING PETALS ──
+(function() {
+  const canvas = document.getElementById('petal-canvas');
+  const ctx    = canvas.getContext('2d');
+  let W, H;
+
+  function resize() {
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const COLORS = ['rgba(245,158,11,', 'rgba(232,121,160,', 'rgba(254,243,199,'];
+  const petals = Array.from({ length: 35 }, () => ({
+    x: Math.random() * 1200,
+    y: Math.random() * 900,
+    r: 2 + Math.random() * 3,
+    vx: (Math.random() - 0.5) * 0.3,
+    vy: -0.2 - Math.random() * 0.4,
+    alpha: 0.1 + Math.random() * 0.4,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    phase: Math.random() * Math.PI * 2,
+  }));
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    petals.forEach(p => {
+      p.x += p.vx + Math.sin(t * 0.001 + p.phase) * 0.2;
+      p.y += p.vy;
+      if (p.y < -10) { p.y = H + 10; p.x = Math.random() * W; }
+      if (p.x < -10) p.x = W + 10;
+      if (p.x > W + 10) p.x = -10;
+
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.alpha + ')';
+      ctx.fill();
+    });
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
