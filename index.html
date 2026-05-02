@@ -312,6 +312,7 @@
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
     }
+    .pillar-visual img { width: 100%; height: 100%; object-fit: cover; position: absolute; z-index: 0; }
     .pillar-visual-icon { font-size: 5rem; opacity: 0.35; z-index: 1; }
     .pillar-visual::before {
       content: ''; position: absolute; inset: 0;
@@ -657,7 +658,7 @@
 
     <div class="tab-content active" id="satsang">
       <div class="pillar-card">
-        <div class="pillar-visual"><span class="pillar-visual-icon">🪷</span></div>
+        <div class="pillar-visual"><img src="images/community.png" alt="Satsang Gathering"></div>
         <div class="pillar-info">
           <span class="pillar-tag">Spiritual Discourse</span>
           <h3>Transformative Satsang</h3>
@@ -669,7 +670,7 @@
 
     <div class="tab-content" id="kirtan">
       <div class="pillar-card">
-        <div class="pillar-visual"><span class="pillar-visual-icon">🎶</span></div>
+        <div class="pillar-visual"><img src="images/hero-bg.png" alt="Kirtan Devotion"></div>
         <div class="pillar-info">
           <span class="pillar-tag">Divine Chants</span>
           <h3>Soul-Stirring Kirtan</h3>
@@ -681,7 +682,7 @@
 
     <div class="tab-content" id="seva">
       <div class="pillar-card">
-        <div class="pillar-visual"><span class="pillar-visual-icon">🤲</span></div>
+        <div class="pillar-visual"><img src="images/community.png" alt="Humanitarian Seva"></div>
         <div class="pillar-info">
           <span class="pillar-tag">Selfless Service</span>
           <h3>Humanitarian Seva</h3>
@@ -693,7 +694,7 @@
 
     <div class="tab-content" id="wisdom">
       <div class="pillar-card">
-        <div class="pillar-visual"><span class="pillar-visual-icon">📿</span></div>
+        <div class="pillar-visual"><img src="images/lotus.png" alt="Timeless Wisdom"></div>
         <div class="pillar-info">
           <span class="pillar-tag">Sacred Teachings</span>
           <h3>Timeless Wisdom</h3>
