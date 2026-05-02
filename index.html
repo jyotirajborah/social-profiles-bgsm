@@ -509,6 +509,53 @@
       .guru-flow { flex-direction: column; }
       .guru-arrow { transform: rotate(90deg); }
     }
+    /* ── Digital Strategy Section ── */
+    .strategy-section {
+      background: var(--bg); padding: 5rem 0; border-top: 1px solid var(--border);
+    }
+    .strategy-section h2 { font-size: 2.2rem; text-align: center; margin-bottom: 3rem; font-family: 'Cinzel Decorative', serif; color: var(--cream); }
+    
+    .table-responsive {
+      width: 100%; overflow-x: auto; margin-bottom: 4rem;
+      background: var(--bg2); border-radius: 4px; border: 1px solid var(--border);
+    }
+    .styled-table {
+      width: 100%; border-collapse: collapse; min-width: 900px; text-align: left;
+    }
+    .styled-table th, .styled-table td { padding: 1.2rem 1.5rem; border-bottom: 1px solid var(--border); }
+    .styled-table th {
+      background: rgba(245, 158, 11, 0.08); color: var(--gold-lt); font-family: 'EB Garamond', serif;
+      font-size: 0.95rem; text-transform: uppercase; letter-spacing: 2px; font-style: italic;
+    }
+    .styled-table tr:hover { background-color: rgba(245, 158, 11, 0.03); }
+    .styled-table td { font-size: 0.95rem; color: var(--text); }
+    .styled-table td strong { color: var(--cream); font-weight: normal; font-family: 'Cinzel Decorative', serif; font-size: 0.85rem; letter-spacing: 1px; }
+
+    .schedule-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;
+      margin-bottom: 4rem;
+    }
+    .schedule-day {
+      background: var(--bg2); padding: 1.5rem; border-radius: 4px;
+      border: 1px solid var(--border); border-top: 2px solid var(--saffron);
+    }
+    .schedule-day h4 { font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 1px;}
+    .schedule-day p { font-size: 0.9rem; color: var(--text); margin-bottom: 0.8rem; }
+    .schedule-day .tag {
+      display: inline-block; padding: 0.2rem 0.8rem; background: rgba(200,137,10,0.1);
+      color: var(--gold-lt); font-size: 0.75rem; border-radius: 20px; font-family: 'EB Garamond', serif;
+      margin-right: 0.4rem; margin-bottom: 0.4rem; border: 1px solid var(--border); letter-spacing: 1px;
+    }
+
+    .formats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;
+    }
+    .format-card {
+      background: var(--bg2); padding: 1.5rem; border-radius: 4px; text-align: center;
+      border: 1px solid var(--border);
+    }
+    .format-card h4 { color: var(--saffron); font-size: 1.1rem; margin-bottom: 0.8rem; text-transform: capitalize; font-family: 'Cinzel Decorative', serif;}
+    .format-card p { font-size: 0.9rem; color: var(--text); }
   </style>
 </head>
 <body>
@@ -761,6 +808,225 @@
 </section>
 
 <!-- ══ FOOTER ══ -->
+  <!-- DIGITAL STRATEGY SECTION -->
+  <section class="strategy-section">
+    <div class="container">
+      <h2>Digital Content Strategy & Roadmap</h2>
+      
+      <!-- Content Creation Timeline -->
+      <h3 style="color: var(--saffron); margin-bottom: 1rem; font-family: 'EB Garamond', serif; font-style: italic;">Content Creation Pipeline</h3>
+      <div class="table-responsive">
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Creator</th>
+              <th>Content Type</th>
+              <th>Timeline</th>
+              <th>Category & Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Amrita Didi</strong></td>
+              <td>Sadhana app Preview</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Projects BGSM</strong></td>
+              <td>sadhana hall (Youth bal, meditation, health)</td>
+              <td><span class="tag">1st</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>BGSM Activities</strong></td>
+              <td>Dental camp, eye camp</td>
+              <td><span class="tag">1st</span></td>
+              <td>Wellness, shivir, unit tour, pravachan, pew, pratibha</td>
+            </tr>
+            <tr>
+              <td><strong>Nutan Didi</strong></td>
+              <td>dham samachar</td>
+              <td>-</td>
+              <td>Ashram level, Unit level, bal shivir, festival</td>
+            </tr>
+            <tr>
+              <td><strong>Amrita Didi (App)</strong></td>
+              <td>SMJI divya leela</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Amrita Didi (App)</strong></td>
+              <td>SMJI lectures</td>
+              <td><span class="tag">Bulk</span></td>
+              <td>SMJI DIM collection</td>
+            </tr>
+            <tr>
+              <td><strong>Amrita Didi (App)</strong></td>
+              <td>Dham darshan (JSS, ASS)</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>Amrita Didi (App)</strong></td>
+              <td>Golden memories</td>
+              <td>-</td>
+              <td>Pravachan (past till now)</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>youth (debate, discussion)</td>
+              <td><span class="tag">Bulk</span> <span class="tag">2nd</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>bal (Bal krishna, bal ram)</td>
+              <td><span class="tag">Bulk</span> <span class="tag">2nd</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Blogpost to SM</td>
+              <td><span class="tag">Bulk</span> <span class="tag">2nd</span></td>
+              <td>Repurpose</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Leela (SMJI RGG bal leela)</td>
+              <td><span class="tag">2nd</span></td>
+              <td>Suno & Higgsfield</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Nutan didi (Children & Youth corner)</td>
+              <td><span class="tag">Bulk</span> <span class="tag">2nd</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>intellectual</td>
+              <td>-</td>
+              <td>Janki Prasad</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>PRM</td>
+              <td><span class="tag">3rd</span></td>
+              <td>Suno & Higgsfield</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Analytics based content</td>
+              <td><span class="tag">3rd</span></td>
+              <td>vidiq/tubebuddy, 20%</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Quotation</td>
+              <td><span class="tag">Bulk</span></td>
+              <td>Manus, Luma, mixboard</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Festival Greetings</td>
+              <td><span class="tag">Bulk</span></td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Books (Maa Baba BGSM Magazine - old memories)</td>
+              <td><span class="tag">Bulk</span></td>
+              <td>Pdf upload, i2ocr, suno</td>
+            </tr>
+            <tr>
+              <td><strong>Pre-made</strong></td>
+              <td>Live Schedule</td>
+              <td>-</td>
+              <td>Roopdhyan sadhana</td>
+            </tr>
+            <tr>
+              <td><strong>-</strong></td>
+              <td>Notification</td>
+              <td>-</td>
+              <td>SMJI agya & Atmanirikshan, Polling</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Weekly Schedule -->
+      <h3 style="color: var(--saffron); margin-bottom: 1rem; font-family: 'EB Garamond', serif; font-style: italic;">Weekly Content Themes</h3>
+      <div class="schedule-grid">
+        <div class="schedule-day">
+          <h4>Monday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#mondaymanthan</strong></p>
+          <p>Leela Chintan (RGG, SSG, BRM, PRM)</p>
+          <p>Contemplation</p>
+        </div>
+        <div class="schedule-day">
+          <h4>Tuesday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#TuesdayTruth</strong></p>
+          <p>Month-specific BOOK</p>
+          <p>sadhana hall links in all post desc</p>
+        </div>
+        <div class="schedule-day">
+          <h4>Wednesday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#wednesdaywisdom</strong></p>
+          <p>PRS</p>
+        </div>
+        <div class="schedule-day">
+          <h4>Thursday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#ThursdayThoughts</strong></p>
+          <p>PRS</p>
+        </div>
+        <div class="schedule-day">
+          <h4>Friday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#fridayfaith</strong></p>
+          <p>Festival specific (pre/post)</p>
+        </div>
+        <div class="schedule-day">
+          <h4>Saturday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#SaturdaySmaran</strong></p>
+        </div>
+        <div class="schedule-day">
+          <h4>Sunday</h4>
+          <span class="tag">Meta & YT</span>
+          <p><strong>#sundaysadhana</strong></p>
+        </div>
+      </div>
+
+      <!-- Platforms & Formats -->
+      <h3 style="color: var(--saffron); margin-bottom: 1rem; font-family: 'EB Garamond', serif; font-style: italic;">Distribution Channels</h3>
+      <div class="formats-grid">
+        <div class="format-card">
+          <h4>Podcast</h4>
+          <p>YouTube<br>Facebook Groups<br>WhatsApp</p>
+        </div>
+        <div class="format-card">
+          <h4>Reel</h4>
+          <p>Instagram</p>
+        </div>
+        <div class="format-card">
+          <h4>Post</h4>
+          <p>Facebook</p>
+        </div>
+        <div class="format-card">
+          <h4>Carousel</h4>
+          <p>Instagram</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
